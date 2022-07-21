@@ -510,6 +510,20 @@
               android:theme="@style/TextSecure.DialogActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
+    <activity android:name=".VoiceActivity"
+        android:exported="true"
+        android:taskAffinity=":voice"
+        android:showOnLockScreen="true"
+        android:showForAllUsers="true"
+        android:showWhenLocked="true">
+        <intent-filter>
+            <action android:name="com.google.android.voicesearch.SEND_MESSAGE_TO_CONTACTS" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:mimeType="text/plain" />
+            <data android:mimeType="audio/wav" />
+        </intent-filter>
+    </activity>
+
     <activity android:name=".SmsSendtoActivity">
         <intent-filter>
             <action android:name="android.intent.action.SENDTO" />
